@@ -42,7 +42,7 @@ esp_adc_cal_characteristics_t *adc_chars = new esp_adc_cal_characteristics_t;
 //esp_adc_cal_value_t val_type = esp_adc_cal_characterize(unit, atten, ADC_WIDTH_BIT_12, DEFAULT_VREF, adc_chars);
 /* wifi host id and password */
 const char* ssid = "kainga-atawhai";
-const char* password = "q1w2e3o0";
+const char* password = "";
 
 //globals
 uint16_t buffer[SAMPLES] = {0};
