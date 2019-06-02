@@ -16,3 +16,10 @@ Designed for ad8232 analog conditioner input i.e for ECG but could be used as a 
 - [ ] Selectable Sample Rate without reflash
 - [ ] Selectable Average/Sum without reflash
 
+## Pinout
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pinout.jpg" alt="Pinout">
+
+## Working Pictures
+
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/working.gif" alt="Working Movie">
+
