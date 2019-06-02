@@ -8,6 +8,8 @@
 #include <esp_adc_cal.h>
 //i2smode
 #include <driver/i2s.h>
+//button handler
+#include "button.hpp"
 
 #define ADC_INPUT ADC1_CHANNEL_0 //pin 36
 //refvoltage and attenuation
@@ -42,7 +44,7 @@ esp_adc_cal_characteristics_t *adc_chars = new esp_adc_cal_characteristics_t;
 //esp_adc_cal_value_t val_type = esp_adc_cal_characterize(unit, atten, ADC_WIDTH_BIT_12, DEFAULT_VREF, adc_chars);
 /* wifi host id and password */
 const char* ssid = "kainga-atawhai";
-const char* password = "";
+const char* password = "q1w2e3o0";
 
 //globals
 uint16_t buffer[SAMPLES] = {0};
@@ -232,6 +234,8 @@ void showSignal(){
 //LCD Waveform I2S Mode
 void showSignalI2S(){
     int x, y, yA;
+    //wrap button A
+while (digitalRead(37)!=0){
     for (int n = 0; n < 160; n++){
         //delay(12); //This delay allows for 2 QRS complexes on LCD at the Same time with enough delay to be useful
         x = n;
@@ -261,8 +265,7 @@ void showSignalI2S(){
         oldyA[n] = yA;
         }
      }
-
-
+}
 
 ///////////
 //Setup Environment
@@ -271,6 +274,7 @@ void showSignalI2S(){
 void setup() {
 
     M5.begin();
+
     //set serial high but only after the m5 init which defaults to 115200
     //Serial.begin(1500000);
     //set adc sample bits to 11BIT (native 12bit) - unavailable in i2s mode will sample at 12bit and pad
