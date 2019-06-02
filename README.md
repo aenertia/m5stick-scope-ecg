@@ -8,7 +8,7 @@ Designed for ad8232 analog conditioner input i.e for ECG but could be used as a 
 
 ## Todo
 - [ ] FFT Implementation
-- [ ] Button Support (Pause Display)
+- [X] Button Support (Pause Display)
 - [X] ADC or I2S mode
 - [X] Perf Analysis
 - [ ] Better Interupt timers

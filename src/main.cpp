@@ -8,7 +8,6 @@
 #include <esp_adc_cal.h>
 //i2smode
 #include <driver/i2s.h>
-//button handler
 #include "button.hpp"
 
 #define ADC_INPUT ADC1_CHANNEL_0 //pin 36
@@ -70,6 +69,10 @@ uint16_t offset = (int)ADC_INPUT * 0x1000 + 0xFFF;
 uint16_t oldx[160];
 uint16_t oldy[160];
 uint16_t oldyA[160];
+
+//button
+
+Button btnA(M5_BUTTON_HOME);
 
 
 ///////////
@@ -188,19 +191,6 @@ void i2sreader(void *pvParameters) {
 
 }
 
-
-//Pause Button Function
-
-void buttonWait(int buttonPin){
-    int buttonState = 0;
-    while(1){
-        buttonState = digitalRead(buttonPin);
-        if (buttonState == HIGH) {
-            return;
-        }
-    }
-}
-
 //LCD Waveform Output
 
 void showSignal(){
@@ -235,7 +225,7 @@ void showSignal(){
 void showSignalI2S(){
     int x, y, yA;
     //wrap button A
-while (digitalRead(37)!=0){
+
     for (int n = 0; n < 160; n++){
         //delay(12); //This delay allows for 2 QRS complexes on LCD at the Same time with enough delay to be useful
         x = n;
@@ -265,7 +255,7 @@ while (digitalRead(37)!=0){
         oldyA[n] = yA;
         }
      }
-}
+
 
 ///////////
 //Setup Environment
@@ -274,7 +264,8 @@ while (digitalRead(37)!=0){
 void setup() {
 
     M5.begin();
-
+    //buttonA handler
+    btnA.begin();
     //set serial high but only after the m5 init which defaults to 115200
     //Serial.begin(1500000);
     //set adc sample bits to 11BIT (native 12bit) - unavailable in i2s mode will sample at 12bit and pad
@@ -317,6 +308,8 @@ void setup() {
 ///////////
 
 void loop() {
+  if (btnA.wasPressed()) {delay(20000);}
+  else{
     //run Lcd
     calcbpm();//
     //showSignal();
@@ -342,4 +335,5 @@ void loop() {
   //Serial.println(analogRead(36));
   //invert
   //Serial.printf("%d\n",map(offset - buffer[0],4096, 0, 0, 4096));
+}
 }
