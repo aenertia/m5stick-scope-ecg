@@ -15,6 +15,8 @@ Designed for ad8232 analog conditioner input i.e for ECG but could be used as a 
 - [ ] ADC or I2S mode toggle without reflash
 - [ ] Selectable Sample Rate without reflash
 - [ ] Selectable Average/Sum without reflash
+- [ ] Implement Web Server
+- [ ] Realtime HTML5 Scope Implementation
 
 ## Pinout
 <img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pinout.jpg" alt="Pinout">
