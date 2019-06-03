@@ -25,3 +25,29 @@ Designed for ad8232 analog conditioner input i.e for ECG but could be used as a 
 
 <img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/working.gif" alt="Working Movie">
 
+### Destructive Disasembly
+
+I took the M5StickC apart as M5Stack haven't published any photos on internals etc which is anoying and no-one else seems to have either. 
+
+** Caution **
+
+It turns out the Pinout PCB insert that is wired to the main PCB (and the Aerial) is pretty much going to break if you don't first cut (or expand) the case gap around the Dupont Female header at the top of the unit. If you don't want to break your m5StickC I suggest cutting that area first. 
+
+Also there is a magnet in the back which is undocumented which means it will stick to a fridge etc which is kinda neat. 
+
+I Plan to wire a direction switch or Analog to the 'A' button on my unit (why they didn't use a step ladder button / DPAD is beyond my comprehension).
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb1.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb2.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb3.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb4.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb5.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb6.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb7.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb8.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb9.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb10.jpg">
+<img src="https://github.com/aenertia/m5stick-scope-ecg/blob/master/pcb/decon_pcb11.jpg">
+
+
+
+
